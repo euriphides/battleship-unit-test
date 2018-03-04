@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "main_test.js",
-  "dependencies": {},
+  "dependencies": {
+    "npm": "^5.7.1"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^5.0.1"
