@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "main_test.js",
-  "dependencies": {
-    "chai": "^3.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "chai": "^3.5.0",
     "mocha": "^5.0.1"
   },
   "scripts": {
