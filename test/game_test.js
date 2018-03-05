@@ -19,4 +19,28 @@ describe('GAME INSTANCE FUNCTIONS', function(){ // I could also mark this as pen
       expect(actual).to.be.false;
     })
   });
+
+  describe('takeTurn', function() {
+    var takeTurn = require('../game_logic/game_instance').takeTurn;
+    var guess, player;
+
+    beforeEach(function(){
+      // guess is a mock function - we don't know how guess will be programmed yet, but we know it has to return a valid location.
+      // we are not testing guess in this test, so we just need valid coordinates
+      guess = function() { return [0,0] ;};
+      player = {
+        ships: [
+          {
+            locations: [[0,0]],
+            damage: [[0,0]]
+          }
+        ]
+      }
+    });
+
+    it('should return false if the game ends', function() {
+      var actual = takeTurn(player, guess)
+      expect(actual).to.be.false;
+    });
+  });
 });
