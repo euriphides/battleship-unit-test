@@ -4,7 +4,6 @@ describe('PLAYER METHODS', function () {
   describe('validateLocation', function () {
     var validateLocation = require('../game_logic/player_methods.js').validateLocation;
     var player;
-
     beforeEach(function () {
       player = {
         ships: [
@@ -70,6 +69,7 @@ describe('PLAYER METHODS', function () {
     var placeShip = require('../game_logic/player_methods.js').placeShip;
     var player;
 
+
     beforeEach(function () {
       player = {
         ships: [
@@ -117,6 +117,7 @@ describe('COMPUTER PLAYER', function () {
   describe('computerFire', function () {
     var computerFire = require('../game_logic/player_methods').computerFire;
     var player;
+    var randomCoordinates = require('../game_logic/player_methods').randomCoordinates;
 
     beforeEach(function () {
       player = {
