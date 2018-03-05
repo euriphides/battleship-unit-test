@@ -12,7 +12,7 @@
 
   },
   "scripts": {
-    "test": "mocha --reporter list",
+    "test": "mocha",
     "test-document": "mocha --reporter markdown",
     "test:watch": "mocha --watch ./test ./",
     "test:watch:playerMethods": "mocha --watch ./test/player_test.js ./game_logic/player_methods.js"

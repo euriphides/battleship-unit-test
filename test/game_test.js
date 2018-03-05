@@ -43,4 +43,24 @@ describe('GAME INSTANCE FUNCTIONS', function(){ // I could also mark this as pen
       expect(actual).to.be.false;
     });
   });
+
+  function saveGame(callback) {
+    setTimeout(function(){
+      callback();
+    }, 1000);
+  }
+
+  describe('saveGame', function(){
+    it('should update save status', function(done) { // by passing a callback to the test function, we tell mocha that we want this test to run asynchronously.
+      var status = 'game not saved...';
+      saveGame(function(){
+        status = 'game saved!';
+        expect(status).to.equal('game saved!');
+        done();
+      });
+
+    });
+  });
+
+
 });
