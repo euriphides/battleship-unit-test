@@ -1,13 +1,5 @@
 var checkForShip = require('./ship_methods.js').checkForShip;
 
-function randomCoordinates() {
-  var x =  Math.floor(Math.random() * 9);
-  var y = Math.floor(Math.random() * 9);
-  var coordinates = [x , y];
-  return coordinates;
-}
-
-
 
 function validateLocation (player, coordinates) {
   var x = coordinates[0];
@@ -56,27 +48,25 @@ function placeShip (player, ship, startingCoordinates, direction) {
   }
 }
 
-
-function computerFire (player, randomCoordinates) {
-
-  var coordinates = randomCoordinates();
-
-  fire(player, coordinates);
+function getRandomCoordinates() {
+  var x =  Math.floor(Math.random() * 9);
+  var y = Math.floor(Math.random() * 9);
+  return [x , y];
 }
 
-function computerPlaceShip (player, ship, randomCoordinates) {
-  var direction = Math.random() > 0.5
+function getRandomDirection() {
+  return Math.random() > 0.5
     ? 'horizontal'
     : 'vertical';
-  var coordinates = randomCoordinates();
-  placeShip(player, ship, coordinates, direction);
 }
+
+// fire(player, getRandomCoordinates());
+// placeShip(computerPlayer, computerPlayer.ship[0], getRandomCoordinates(), getRandomDirection());
+
 
 module.exports = {
   placeShip: placeShip,
   validateLocations: validateLocations,
   validateLocation: validateLocation,
-  computerPlaceShip: computerPlaceShip,
-  computerFire: computerFire,
-  randomCoordinates: randomCoordinates
+  getRandomCoordinates: getRandomCoordinates
 };
