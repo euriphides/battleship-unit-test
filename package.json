@@ -9,10 +9,13 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^5.0.1"
+
   },
   "scripts": {
     "test": "mocha -- reporter list",
-    "test-document": "mocha --reporter markdown"
+    "test-document": "mocha --reporter markdown",
+    "test:watch": "mocha --watch ./test ./",
+    "test:watch:playerMethods": "mocha --watch ./test/player_test.js ./game_logic/player_methods.js"
   },
   "author": "",
   "license": "ISC"
