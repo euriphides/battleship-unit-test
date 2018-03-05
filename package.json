@@ -11,7 +11,8 @@
     "mocha": "^5.0.1"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha -- reporter list",
+    "test-document": "mocha --reporter markdown"
   },
   "author": "",
   "license": "ISC"

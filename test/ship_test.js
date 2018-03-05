@@ -85,13 +85,13 @@ describe('fire', function(){
     };
   })
 
-  after(function(){
-    console.log('entire test suite completed');
-  })
-
-  afterEach(function(){
-    console.log('one unit test completed')
-  })
+  // after(function(){
+  //   console.log('entire test suite completed');
+  // })
+  //
+  // afterEach(function(){
+  //   console.log('one unit test completed')
+  // })
 
   it('should report damage on the given players ship at a given coordinate', function(){
 
