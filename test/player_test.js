@@ -22,7 +22,7 @@ describe('PLAYER METHODS', function () {
       expect(actual).to.be.ok;
     });
 
-    it('shoud confirm INvalid for occupied locations in range', function () {
+    it('should confirm INvalid for occupied locations in range', function () {
       var location = [9, 9];
       var actual = validateLocation(player, location);
 
@@ -96,5 +96,19 @@ describe('PLAYER METHODS', function () {
       expect(actual).to.have.length(1);
       expect(actual[0]).to.deep.equal([0, 1]);
     });
+
+    it('should throw an error if no direction is specified', function() {
+      var ship = player.ships[0];
+      var coordinates = [0, 1];
+
+      // trap the expected error throw in a handler, to prevent the test from thinking the error is a failed test.
+      var handler = function() {
+        placeShip(player, ship, coordinates);
+      }
+      // this could also be written by placing the function that is in "handler" in the "expect()" portion, skipping the creation of the handler variable.
+
+      expect(handler).to.throw(Error)
+      expect(handler).to.throw('You left out the direction! I need that for math!') // this is what Error throws, but you can check for that too.
+    })
   });
 });
